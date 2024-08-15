@@ -1,14 +1,22 @@
 type StatsProps = {
   numberOfCharacters: number;
+  instagramCharactersLeft: number;
+  facebookCharactersLeft: number;
+  numberOfWords: number;
 };
 
-export default function Stats({ numberOfCharacters }: StatsProps) {
+export default function Stats({
+  numberOfCharacters,
+  instagramCharactersLeft,
+  facebookCharactersLeft,
+  numberOfWords,
+}: StatsProps) {
   return (
     <section className='stats'>
-      <Stat number={0} label='Words' />
+      <Stat number={numberOfWords} label='Words' />
       <Stat number={numberOfCharacters} label='Characters' />
-      <Stat number={280} label='Instagram' />
-      <Stat number={2200} label='Facebook' />
+      <Stat number={instagramCharactersLeft} label='Instagram' />
+      <Stat number={facebookCharactersLeft} label='Facebook' />
     </section>
   );
 }
